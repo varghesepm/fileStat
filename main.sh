@@ -14,7 +14,9 @@ statPrinter() {
 # find files with mtime -15 and write its result into a file
 find ./ -type f -mtime -15  > /tmp/file20.txt
 
-awk 'BEGIN{ printf "'${RED}'%s\t\t'${NC}'| '${RED}'%s\t\t\t'${NC}'| '${RED}'%s\t\t\t'${NC}'| '${RED}'%s'${NC}'\n","Size", "Owner","mtime","Filename"'}
+#heading
+printf "${RED}%s\t\t${NC}|${RED}%s\t\t\t${NC}|${RED}%s\t\t\t${NC}|${RED}%s${NC}\n" "Size" "Owner" "mtime" "Filename"
+#awk 'BEGIN{ printf "'${RED}'%s\t\t'${NC}'| '${RED}'%s\t\t\t'${NC}'| '${RED}'%s\t\t\t'${NC}'| '${RED}'%s'${NC}'\n","Size", "Owner","mtime","Filename"'}
 
 # read file
 while read f; do
